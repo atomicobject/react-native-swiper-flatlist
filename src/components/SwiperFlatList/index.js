@@ -69,6 +69,9 @@ export default class SwiperFlatList extends PureComponent {
 
   componentWillUpdate(nextProps) {
     this.setup(nextProps);
+    if (this.props.index !== nextProps.index) {
+      this._scrollToIndex(nextProps.index, true);
+    }
   }
 
   componentWillUnmount() {
